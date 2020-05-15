@@ -21,10 +21,11 @@
   - 공부한 대상과 학습 이유를 밝히기
 
 ```
-Add angular working flow
+Add: angular working flow
 
 6.2 angular file structure and working flow
 Add the -. Insert the product about build result.
 before the node server run angular execute the file bundling and transfiling the js.
 i need to know what is transfiling and build result
 ```
+
