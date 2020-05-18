@@ -29,3 +29,9 @@ before the node server run angular execute the file bundling and transfiling the
 i need to know what is transfiling and build result
 ```
 
+### Gitbash CLI
+
+```
+git fetch --all
+git pull origin master
+```
