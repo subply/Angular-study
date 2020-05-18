@@ -1,0 +1,85 @@
+# ECMAScript 6
+
+- tyscript는 ES5의 상위 집합이므로 그대로 문법 사용 가능
+- 트랜스파일러 없이 기존 JS 엔진(브라우저 혹은 Node.js)에서 ES6 실행 가능
+  - 일부는 브라우저 미지원으로 Webpack 번들러 필요
+
+# let,const와 블록 레벨 스코프
+
+### let
+
+- 변수 유효 범위는 좁을수록 좋다.
+- let, const는 var 단점을 보완해 나온 변수다.
+  - 함수 레벨 스코프: 함수 내에서 선언된 변수. 외부에서 참조 불가능한 `지역변수`
+  - 블록 레벨 스코프: 코드 블록 내에서 선언된 변수. 외부에서 참조 불가능
+
+* 함수 외부에 선언된 var는 `전역변수`
+* 전역 변수 foo의 값이 블록 내에서 재할당 됨
+
+```javascript
+var foo = 123;
+{
+  var foo = 456;
+}
+console.log(foo); //456
+```
+
+- 블록 레벨 스코프 let
+- 지역변수 foo와 전역변수 foo는 다른 변수
+- 블록 레벨 스코프 변수 bar는 외부에서 참조 불가능
+
+```javascript
+let foo = 123;
+{
+  let foo = 456;
+  let bar = 456;
+}
+console.log(foo); //123
+console.log(bar); //error
+```
+
+- var는 중복 허용
+- let는 중복사용시 문법 에러
+
+```javascript
+var foo = 123;
+var foo = 456;
+
+let bar = 123;
+let bar = 456; // error
+```
+
+### 호이스팅
+
+- 호이스팅(hoisting): 선언문을 해당 스코프의 선두로 옮긴 것 처럼 동작
+- 자바스크립트는 모든 선언(var,let,const,function,class)을 `호이스팅` 한다.
+- `let`은 TDZ에 빠져 선언 이전에 사용하면 문법 에러 발생
+
+### 클로저
+
+- for문 선언에서 `var` 변수를 사용하면 전역변수 이므로 클로저 작업을 해주어야 한다.
+- 번거로움을 피하기 위해 `let` 사용
+- let의 i는 for 루프 생명주기 끝나도 변수 참조하는 함수가 있다면 계속 유지
+
+```javscript
+for(let i=0 ; i<3 ; i ++){
+    console.log(i);
+}
+```
+
+### 전역 객체와 let
+
+- 전역객체: 모든 객체의 유일한 최상위 객체 (window객체, global 객체)
+- var를 전역 변수로 사용하면 전역 객체의 `프로퍼티`가 된다.
+- let은 전역 객체의 `프로퍼티`가 될 수 없다.
+
+```javascript
+var foo = 123; //전역변수
+console.log(window.foo); // 123
+```
+
+### const
+
+- 변하지 않는 값 위해 사용
+- let처럼 블록 레벨 스코프 이나 `재할당`이 안되고 `선언과 동시에 할당` 해야한다.
+- 재할당은 안되나 할당된 객체의 `내용`은 변경 가능
