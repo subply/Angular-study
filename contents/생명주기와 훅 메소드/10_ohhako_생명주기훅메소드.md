@@ -11,7 +11,7 @@
 
 - ng- 가 붙은 추상메서드를 제공한다.
 
-<img src ="../imgs/lifeCycleHookMethod.png">
+<img src ="../../imgs/lifeCycleHookMethod.png">
 
 - constructure: 클래스인 컴포넌트, 디렉티브 생성함.
   - Angular가 관리하는 메소드가 아니다
