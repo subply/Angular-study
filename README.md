@@ -1,6 +1,6 @@
 # Angular-study
 
-<img src="angular_essentials.jpg">
+<img src="angular_essentials.jpg" width="150px" height="200px">
 
 - [Angular essential]를 읽고 학습하는 저장소 입니다.
 
