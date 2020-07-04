@@ -1,5 +1,7 @@
 # Angular-study
 
+<img src="angular_essentials.jpg">
+
 - [Angular essential]를 읽고 학습하는 저장소 입니다.
 
 ### 주요 목차
